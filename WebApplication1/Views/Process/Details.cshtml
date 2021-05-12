@@ -1,0 +1,30 @@
+﻿@model TblProcess
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("PROCESS NAME")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VC_PROCESS_NAME)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("LAST SEQUENCE")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IN_LAST_SEQ)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-processId="@Model.IN_PROCESS_ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

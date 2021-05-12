@@ -13,12 +13,12 @@
         <form asp-action="Create" method="post">
             @Html.AntiForgeryToken()
             <div class="form-group">
-                <label asp-for="VC_PROCESS_NAME" class="control-label"></label>
+                <label class="control-label">Process Name</label>
                 <input asp-for="VC_PROCESS_NAME" class="form-control"/>
                 <span asp-validation-for="VC_PROCESS_NAME" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IN_LAST_SEQ" class="control-label"></label>
+                <label asp-for="IN_LAST_SEQ" class="control-label">Last Sequence</label>
                 <input asp-for="IN_LAST_SEQ" class="form-control" />
                 <span asp-validation-for="IN_LAST_SEQ" class="text-danger"></span>
             </div>
