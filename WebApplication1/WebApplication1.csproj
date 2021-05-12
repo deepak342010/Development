@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210512044859_LastSeqInProcess.cs" />
+    <Compile Remove="Migrations\20210512044859_LastSeqInProcess.Designer.cs" />
+    <Compile Remove="Migrations\20210512052952_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512052952_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512053147_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512053147_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512053519_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512053519_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512053703_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512053703_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512053844_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512053844_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512053933_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512053933_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512054803_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512054803_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512055041_PKMighration.cs" />
+    <Compile Remove="Migrations\20210512055041_PKMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512055331_FKMighration.cs" />
+    <Compile Remove="Migrations\20210512055331_FKMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512055727_FKMighration.cs" />
+    <Compile Remove="Migrations\20210512055727_FKMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512060136_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512060136_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512060222_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512060222_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512060412_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512060412_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512060632_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512060632_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512061013_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512061013_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512061156_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512061156_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512061707_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512061707_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512061806_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512061806_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512061936_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512061936_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210512062008_InitialMighration.cs" />
+    <Compile Remove="Migrations\20210512062008_InitialMighration.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+</Project>
