@@ -15,26 +15,72 @@ namespace WebApplication1.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("WebApplication1.Models.Employee", b =>
+            modelBuilder.Entity("WebApplication1.Models.TblCatchword", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IN_CATCHWORD_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
+                    b.Property<bool>("B_PROMPT")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DT_LASTUPDATED_ON")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IN_LASTUPDATED_BY")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IN_TYPE")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TI_CATCHWORD_ORDER")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VC_CATCHWORD")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EmpName")
+                    b.HasKey("IN_CATCHWORD_ID");
+
+                    b.ToTable("TBL_CATCHWORD");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.TblCategory", b =>
+                {
+                    b.Property<int>("IN_CATEGORY_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("B_PROMPT")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("DT_LASTUPDATED_ON")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("IN_LASTUPDATED_BY")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("IN_PROCESS_ID")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int>("IN_SEQUENCE")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VC_CATEGORY_NAME")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IN_CATEGORY_ID");
 
-                    b.ToTable("Employees");
+                    b.HasIndex("IN_PROCESS_ID");
+
+                    b.ToTable("TBL_CATEGORY");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.TblProcess", b =>
@@ -54,11 +100,12 @@ namespace WebApplication1.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("VC_PROCESS_NAME")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IN_PROCESS_ID");
 
-                    b.ToTable("TblProcess");
+                    b.ToTable("TBL_PROCESS");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.TblQueue", b =>
@@ -68,24 +115,41 @@ namespace WebApplication1.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("TblProcess")
+                    b.Property<int?>("IN_PROCESS_ID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("VC_QUEUE_NAME")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("IN_QUEUE_ID");
 
-                    b.HasIndex("TblProcess");
+                    b.HasIndex("IN_PROCESS_ID");
 
-                    b.ToTable("TblQueue");
+                    b.ToTable("TBL_QUEUE");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.TblCategory", b =>
+                {
+                    b.HasOne("WebApplication1.Models.TblProcess", "TblProcess")
+                        .WithMany()
+                        .HasForeignKey("IN_PROCESS_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TblProcess");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.TblQueue", b =>
                 {
-                    b.HasOne("WebApplication1.Models.TblProcess", "IN_PROCESS_ID")
+                    b.HasOne("WebApplication1.Models.TblProcess", "TblProcess")
                         .WithMany()
-                        .HasForeignKey("TblProcess");
+                        .HasForeignKey("IN_PROCESS_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TblProcess");
                 });
 #pragma warning restore 612, 618
         }

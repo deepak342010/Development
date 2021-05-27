@@ -47,16 +47,33 @@
     <Compile Remove="Migrations\20210512061936_InitialMighration.Designer.cs" />
     <Compile Remove="Migrations\20210512062008_InitialMighration.cs" />
     <Compile Remove="Migrations\20210512062008_InitialMighration.Designer.cs" />
+    <Compile Remove="Migrations\20210526042754_migration2.cs" />
+    <Compile Remove="Migrations\20210526042754_migration2.Designer.cs" />
+    <Compile Remove="Migrations\20210526042954_migration3.cs" />
+    <Compile Remove="Migrations\20210526042954_migration3.Designer.cs" />
+    <Compile Remove="Migrations\20210526043141_migration3.cs" />
+    <Compile Remove="Migrations\20210526043141_migration3.Designer.cs" />
+    <Compile Remove="Migrations\20210526043757_migration3.cs" />
+    <Compile Remove="Migrations\20210526043757_migration3.Designer.cs" />
+    <Compile Remove="Migrations\20210526043953_migration3.cs" />
+    <Compile Remove="Migrations\20210526043953_migration3.Designer.cs" />
+    <Compile Remove="Migrations\20210526044121_migration3.cs" />
+    <Compile Remove="Migrations\20210526044121_migration3.Designer.cs" />
+    <Compile Remove="Migrations\20210526044840_migration3.cs" />
+    <Compile Remove="Migrations\20210526044840_migration3.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.13" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.13">
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.12.0" />
   </ItemGroup>
 
 </Project>

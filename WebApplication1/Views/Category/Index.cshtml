@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TblCategory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col col-md-9" style="text-align:right;">
+            <div id="pnlToolbar">
+                <button type="button" id="btnNew" name="Command" class="btn btn-info" /> <i class="glyphicon glyphicon-plus-sign"></i> NEW CATEGORY</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="pnlList">
+        <table id="tblCategory" class="table table-bordered table-responsive">
+            <thead>
+                <tr>
+                    <th>Process Name</th>
+                    <th>Category Name</th>
+                    <th>Prompt</th>
+                    <th>Sequence</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.VC_PROCESS_NAME</td>
+                        <td>@item.VC_CATEGORY_NAME</td>
+                        <td>@item.B_PROMPT</td>
+                        <td>@item.IN_SEQUENCE</td>
+                        <td>
+                            <a href="#" class="btn btn-primary a-btn-slide-text">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                                <span><strong>Edit</strong></span>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="#" class="btn btn-primary a-btn-slide-text">
+                                <i class="fa fa-trash-alt" aria-hidden="true"></i>
+                                <span><strong>Delete</strong></span>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+
+    $('#tblCategory').DataTable({
+        "bPaginate": true,
+        "bLengthChange": false,
+        "bFilter": true,
+        "bAutoWidth": true,
+        "bInfo": false
+    });
+</script>

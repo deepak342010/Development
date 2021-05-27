@@ -16,9 +16,11 @@ namespace WebApplication1.Models
         {
         }
 
-        public virtual DbSet<Employee> Employees { get; set; }
-        public virtual DbSet<TblProcess> TblProcess { get; set; }
-        public virtual DbSet<TblQueue> TblQueue { get; set; }
+       // public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<TblProcess> TBL_PROCESS { get; set; }
+        public virtual DbSet<TblQueue> TBL_QUEUE { get; set; }
+        public virtual DbSet<TblCatchword> TBL_CATCHWORD { get; set; }
+        public virtual DbSet<TblCategory> TBL_CATEGORY { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

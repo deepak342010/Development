@@ -1,0 +1,18 @@
+﻿@model TblQueue
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form asp-action="Create" asp-controller="Queue" method="post">
+    <div class="form-group col-md-3">
+        <label asp-for="IN_PROCESS_ID" class="content-lable">Process Name</label>
+        <select asp-for="IN_PROCESS_ID" asp-items='new SelectList(ViewBag.ProcessList,"IN_PROCESS_ID","VC_PROCESS_NAME")' class="form-control">
+        </select>
+        <span asp-validation-for="IN_PROCESS_ID" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-3">
+        <input asp-for="VC_QUEUE_NAME" class="form-control" />
+        <span asp-validation-for="VC_QUEUE_NAME" class="text-danger"></span>
+    </div>
+    <input type="submit" value="submit" />
+</form>

@@ -29,6 +29,7 @@ namespace WebApplication1
             services.AddDbContextPool<TestDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DbConnectionString")));
             services.AddControllersWithViews();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +41,8 @@ namespace WebApplication1
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseStatusCodePages();
+                //app.UseExceptionHandler("/Error/Error");            
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }

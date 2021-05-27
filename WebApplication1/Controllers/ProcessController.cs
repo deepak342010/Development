@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         }
         public IActionResult Index()
         {
-            var list = _context.TblProcess.ToList();
+            var list = _context.TBL_PROCESS.ToList();
             return View(list);
         }
 
@@ -31,7 +31,7 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.TblProcess.Add(tblProcess);
+                _context.TBL_PROCESS.Add(tblProcess);
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
@@ -42,7 +42,7 @@ namespace WebApplication1.Controllers
             if (processId == null)
                 return NotFound();
 
-            var process = _context.TblProcess.Find(processId);
+            var process = _context.TBL_PROCESS.Find(processId);
             if (process == null)
                 return NotFound();
 
@@ -77,7 +77,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var process = _context.TblProcess
+            var process = _context.TBL_PROCESS
                 .FirstOrDefault(m => m.IN_PROCESS_ID == processId);
             if (process == null)
             {
@@ -90,7 +90,7 @@ namespace WebApplication1.Controllers
 
         private bool ProcessExists(int id)
         {
-            return _context.TblProcess.Any(e => e.IN_PROCESS_ID == id);
+            return _context.TBL_PROCESS.Any(e => e.IN_PROCESS_ID == id);
         }
     }
 }
